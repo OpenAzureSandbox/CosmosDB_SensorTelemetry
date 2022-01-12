@@ -8,6 +8,10 @@
 
 - 毎秒 Cosmos DB にセンサーデータを送信
 
+## デモアーキテクチャ
+
+![alt text](./images/architecture.png)
+
 ## セットアップ方法
 
 ### 1. Terraform 認証用のサービスプリンシパル作成
