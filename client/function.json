@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "*/1 * * * * *"
+    },
+    {
+      "name": "telemetryDocument",
+      "type": "cosmosDB",
+      "databaseName": "telemetryDB",
+      "collectionName": "Telemetry",
+      "createIfNotExists": true,
+      "partitionKey": "/sensor_id",
+      "collectionThroughput": 400,
+      "connectionStringSetting": "MyConnectionString",
+      "direction": "out"
+    }
+  ]
+}
