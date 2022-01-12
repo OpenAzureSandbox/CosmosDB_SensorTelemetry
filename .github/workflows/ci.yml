@@ -35,18 +35,18 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
-      working-directory: ./src/env/${{ env.ENV }}
+      working-directory: ./azure/env/${{ env.ENV }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
-      working-directory: ./src/env/${{ env.ENV }}
+      working-directory: ./azure/env/${{ env.ENV }}
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       id: plan
       run: terraform plan
-      working-directory: ./src/env/${{ env.ENV }}
+      working-directory: ./azure/env/${{ env.ENV }}
 
     - name: "Create comment for PR"
       uses: actions/github-script@v5
