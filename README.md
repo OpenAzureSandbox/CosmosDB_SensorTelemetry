@@ -26,7 +26,9 @@ The output includes credentials that you must protect. Be sure that you do not i
 }
 ```
 
-### 2. tfstate ファイル格納用の Blob Storage 作成
+### 2. 作成したサービスプリンシパルのシークレットを GitHub のシークレットに格納
+
+### 3. tfstate ファイル格納用の Blob Storage 作成
 
 ```
 #!/bin/bash
@@ -45,7 +47,7 @@ az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME
 ```
 
-### 3. local.settings.json の作成
+### 4. local.settings.json の作成
 
 ローカル実行用に、`local.settings.sample.json` を参考に、`local.settings.json` を作成
 
@@ -60,7 +62,7 @@ az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOU
 }
 ```
 
-### 4. 認証情報の構成
+### 5. 認証情報の構成
 
 `./azure/env/demo/main.tf` の以下の部分をご自分のものと置換
 
