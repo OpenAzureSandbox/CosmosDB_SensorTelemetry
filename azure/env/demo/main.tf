@@ -34,4 +34,6 @@ module "cosmosdb" {
 
   rg_name  = local.resource_group_name
   location = local.azure_location
+
+  depends_on = [module.azure_rg]
 }
